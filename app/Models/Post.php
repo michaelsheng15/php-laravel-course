@@ -21,8 +21,14 @@ class Post extends Model
     //3 - turning off assignemnt completely
     protected $guarded =[]; 
 
+    //post belongs to a category
     public function category(){
         return $this->belongsTo(Category::class);
+    }
+
+    //post belongs to a author
+    public function author(){
+        return $this->belongsTo(User::class, 'user_id');
     }
 
 
